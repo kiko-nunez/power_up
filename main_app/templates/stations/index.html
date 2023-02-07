@@ -35,13 +35,6 @@
 
 <h1>Search EV Stations</h1>
 
-{% comment %} {% for station in stations %}
-<div class="card">
-<a href="{% url 'detail' station.id %}">
-  <div class="card-content">
-    <span class="card-title">{{ station.name }}</span>
-    <p>Location: {{ station.location }}</p>
-    <p>Availability: {{ finch.availability }}</p> {% endcomment %}
     <form action="" method="POST">
         {% csrf_token %}
         {% comment %} <input type="text" name="Address" placeholder="Address">
@@ -49,18 +42,15 @@
         {{ form.as_p }}
         <input type="search" placeholder="Enter Post Code"/>
         <input type="submit" value="Submit!" class="btn green" />
-        {% comment %} {{ data['station_name'] }}
-        {{ data['station_address'] }} {% endcomment %}
     </form>
-
-     <ul>
+<h2>Results:</h2>
+    <ul>
         {% for key, value in data.items %}
-            <li>{{ key }}: {{ value.station_name }}</li>
+        <li>{{ key }}: {{ value.station_name }}</li>
         {% endfor %}
-        </ul>
+    </ul>
+
         
    </div>
 </a>
 </div>
-
-{% comment %} {% endfor %}  {% endcomment %}

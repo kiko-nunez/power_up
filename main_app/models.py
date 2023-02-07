@@ -13,5 +13,13 @@ class Station(models.Model):
     connectors = models.TextField(max_length=100)
     reviews = models.TextField(max_length=200)
 
-# class StationSearch(models.Model):
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={"station_id": self.id})
+    
+
+    # class Meta:
+    #     name = ['station_name']
+
+# class SearchResults(models.Model):
 #     name = ['station_name']
+#     postcode = ['postcode']

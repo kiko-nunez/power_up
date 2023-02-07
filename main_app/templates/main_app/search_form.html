@@ -10,4 +10,12 @@
   <input type="search" value="PostCode"/>
   <input type="submit" value="Submit!" class="btn" />
 </form>
+
+<ul>
+    {% for key, value in data.items %}
+    <li>{{ key }}: {{ value.station_name }}</li>
+    {% endfor %}
+</ul>
+
+
 {% endblock %}

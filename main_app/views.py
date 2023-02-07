@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Station
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
-from .forms import StationForm, SearchForm
+from .forms import StationForm
 
 url = "https://electric-vehicle-charging-station-and-point.p.rapidapi.com/us/elec.json"
 
@@ -47,7 +47,7 @@ def signup(request):
 
 
 def stations_index(request):
-    data = []
+    data = ""
     stations = Station.objects.all()
     if request.method == 'POST':
         form = StationForm(request.POST)

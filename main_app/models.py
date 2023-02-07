@@ -5,3 +5,13 @@ from datetime import date
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+class Station(models.Model): 
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    availability = models.TextField(max_length=250)
+    connectors = models.TextField(max_length=100)
+    reviews = models.TextField(max_length=200)
+
+# class StationSearch(models.Model):
+#     name = ['station_name']

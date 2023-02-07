@@ -1,0 +1,65 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PowerUp</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+<header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <ul>
+          <li>
+            <a href="/" class="left brand-logo"> PowerUp</a>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="/about">About</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'stations_create' %}">Add a Station</a></li>
+          <li><a href="/mystations">My Stations</a></li>
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<h1>Search EV Stations</h1>
+
+{% comment %} {% for station in stations %}
+<div class="card">
+<a href="{% url 'detail' station.id %}">
+  <div class="card-content">
+    <span class="card-title">{{ station.name }}</span>
+    <p>Location: {{ station.location }}</p>
+    <p>Availability: {{ finch.availability }}</p> {% endcomment %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% comment %} <input type="text" name="Address" placeholder="Address">
+        <input type="number" name="postcode" placeholder="Postcode" id=""> {% endcomment %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit!" class="btn green" />
+        {% comment %} {{ data['station_name'] }}
+        {{ data['station_address'] }} {% endcomment %}
+    </form>
+
+     <ul>
+        {% for key, value in data.items %}
+            <li>{{ key }}: {{ value.station_name }}</li>
+        {% endfor %}
+        </ul>
+        
+   </div>
+</a>
+</div>
+
+{% comment %} {% endfor %}  {% endcomment %}

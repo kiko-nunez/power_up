@@ -26,9 +26,9 @@
             <li><a href="/about">About</a></li>
             {% if user.is_authenticated %}
             {% comment %} <li><a href="{% url 'location_index' %}">View All Locations</a></li>
-            <li><a href="{% url 'location_create' %}">Add a Location</a></li>
-            <li><a href="{% url 'finches_create' %}">Add a Finch</a></li>
-            <li><a href="/finches">View All Finches</a></li> {% endcomment %}
+            <li><a href="{% url 'location_create' %}">Add a Location</a></li> {% endcomment %}
+            {% comment %} <li><a href="{% url 'stations_create' %}">Add a Station</a></li> {% endcomment %}
+            <li><a href="/stations">EV Stations</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>

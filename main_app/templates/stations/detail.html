@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Station Details</h1>
+<div class="row">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ station.name }}</span>
+        <p>Address: {{ station.address }}</p>
+        <p>Connector Types: {{ station.connectors }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

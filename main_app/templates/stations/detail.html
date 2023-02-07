@@ -9,6 +9,10 @@
         <p>Address: {{ station.address }}</p>
         <p>Connector Types: {{ station.connectors }}</p>
       </div>
+      <div class="card-action">
+        <a href="{% url 'stations_update' station.id %}">Edit</a>
+        <a href="{% url 'stations_delete' station.id %}">Delete</a>
+      </div>
     </div>
   </div>
 </div>

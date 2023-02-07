@@ -9,5 +9,7 @@ urlpatterns = [
     path('mystations/', views.stations, name='stations'),
     path('stations/<int:station_id>/', views.stations_detail, name='detail'),
     path('stations/create/', views.StationCreate.as_view(), name='stations_create'),
-    path('stations/<int:station_id>/add_station/', views.add_station, name='add_station')
+    path('stations/<int:station_id>/add_station/', views.add_station, name='add_station'),
+    path('stations/<int:pk>/update/', views.StationUpdate.as_view(), name='stations_update'),
+    path('stations/<int:pk>/delete/', views.StationDelete.as_view(), name='stations_delete'),
 ]

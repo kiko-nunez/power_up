@@ -7,7 +7,7 @@ class StationForm(ModelForm):
     model = Station
     fields = ['name', 'address', 'availability', 'connectors', 'reviews']
 
-class SearchForm(ModelForm):
-    class Meta:
-        model: Station
-        fields = '__all__'
+class SearchForm(forms.Form):
+    search_value = forms.CharField(label='Post Code', max_length=100)
+
+        

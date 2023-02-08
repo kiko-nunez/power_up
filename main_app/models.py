@@ -16,10 +16,3 @@ class Station(models.Model):
     def get_absolute_url(self):
         return reverse("detail", kwargs={"station_id": self.id})
     
-
-    # class Meta:
-    #     name = ['station_name']
-
-# class SearchResults(models.Model):
-#     name = ['station_name']
-#     postcode = ['postcode']

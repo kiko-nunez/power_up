@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import Station
+from .models import Station, Vehicle
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 import requests
-from .forms import StationForm, SearchForm
+from .forms import StationForm, SearchForm, VehicleForm
 
 url = "https://electric-vehicle-charging-station-and-point.p.rapidapi.com/us/elec.json"
 
@@ -94,6 +96,22 @@ def stations_detail(request, station_id):
 def store_api_data():
     pass
 
+def vehicle_index(request):
+    vehicles = Vehicle.objects.all()
+    return render(request, 'vehicle_index.html', {'vehicles': vehicles})
+
+def add_vehicle(request, vehicle_id):
+    form = VehicleForm(request.POST)
+    if form.is_valid():
+        new_vehicle = form.save(commit=False)
+        new_vehicle.vehicle_id = vehicle_id
+        new_vehicle.save()
+    return redirect('vehicle_index', vehicle_id=vehicle_id)
+
+def vehicle_detail(request, vehicle_id):
+    vehicle = Vehicle.objects.get(id=vehicle_id)
+    return render(request, 'vehicle_detail.html', {'vehicle': vehicle})
+
 # Classes Below
 
 
@@ -115,3 +133,30 @@ class StationUpdate(UpdateView):
 class StationDelete(DeleteView):
     model = Station
     success_url = '/stations/'
+
+#Vehicle Classes
+
+class VehicleCreate(CreateView):
+    model = Vehicle
+    fields = '__all__'
+    success_url = '/vehicles/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+class VehicleUpdate(UpdateView):
+    model = Vehicle
+    fields = '__all__'
+
+
+class VehicleDelete(DeleteView):
+    model = Vehicle
+    success_url = '/vehicles/'
+
+
+
+
+
+

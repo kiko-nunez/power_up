@@ -16,3 +16,15 @@ class Station(models.Model):
     def get_absolute_url(self):
         return reverse("detail", kwargs={"station_id": self.id})
     
+class Vehicle(models.Model):
+    TYPES = (
+        ('BEV', 'Battery Electric Vehicle'),
+        ('PHEV', 'Plug-In Hybrid Electric Vehicle'),
+        ('HEV', 'Hybrid Electric Vehicle'),
+        ('FCEV', 'Fuel Cell Electric Vehicle')
+    )
+    make = models.CharField(max_length=25)
+    model = models.CharField(max_length=25)
+    type = models.CharField(max_length=4, choices=TYPES, default=TYPES[0][0], verbose_name="EV Type")
+    batterysize = models.IntegerField()
+

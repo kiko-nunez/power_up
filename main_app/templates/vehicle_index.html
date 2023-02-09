@@ -1,5 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-
+{% comment %} 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,23 +32,29 @@
       </ul>
     </div>
   </nav>
-</header>
+</header> {% endcomment %}
 
+{% block add_vehicle %}
+<li><a href="{% url 'vehicle_create' %}">Add a Vehicle</a></li>
+{% endblock %}
 
+{% block content %} 
 <h1>Vehicles</h1>
 {% for vehicle in vehicles %}
 <div class="row">
   <div class="col s6">
     <div class="card">
       <a href="{% url 'vehicle_detail' vehicle.id %}">
-      <div class="card-content">
-        <span class="card-title">{{ vehicle.name }}</span>
-        <p>Address: {{ vehicle.model }}</p>
-        <p>Description: {{ vehicle.make }}</p>
+        <div class="card-content">
+        <span class="card-title">{{ vehicle.type }}</span>
+        <p>Make: {{ vehicle.make }}</p>
+        <p>Model: {{ vehicle.model }}</p>
+        <p>Battery Size: {{ vehicle.batterysize }}V</p>
       </div>
     </div>
   </div>
 </a>
 </div>
 
-{% endfor %}
+{% endfor %} {% endblock %}
+

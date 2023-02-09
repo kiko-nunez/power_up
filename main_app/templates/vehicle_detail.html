@@ -5,10 +5,10 @@
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ vehicle.name }}</span>
-        <p>EV type: {{ vehicle.type }}</p>
-        <p>Make: {{ vehicle.make }}</p>
-        <p>Model: {{ vehicle.model }}</p>
+        <span class="card-title">{{ vehicle.type }}</span>
+        <p>EV type: {{ vehicle.make }}</p>
+        <p>Make: {{ vehicle.model }}</p>
+        <p>Model: {{ vehicle.batterysize }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'vehicle_update' vehicle.id %}">Edit</a>

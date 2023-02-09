@@ -40,8 +40,8 @@ body {
 } 
  .card:hover {
     background: rgba(17, 1, 1, 0.5);
-    transform: scale(1.1);
-    transition: ease 200ms;
+    /* transform: scale(1.1);
+    transition: ease 200ms; */
     color: white;
   }
 

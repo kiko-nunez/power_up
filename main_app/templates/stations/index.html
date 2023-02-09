@@ -45,11 +45,19 @@
 {% for key, value in data.items %} 
     <div class="card">
     <div class="card-content">
+    <form action="{% url 'stations_create' %} " method="post">
+        {% csrf_token %}
     <span class="card-title">{{ value.station_name }}</span>
         <p>Address: {{ value.street_address }}</p>
         <p>Availability: {{ value.access_days_time }}</p>
         <p>Connector Types: {{ value.ev_connector_types }}</p>
         <p class="link">Website: <a href="{{ value.ev_network_web }}">{{ value.ev_network_web }}</a></p>
+        <input type="hidden" name="name" value="{{ value.station_name }}">
+        <input type="hidden" name="address" value="{{ value.street_address }}">
+        <input type="hidden" name="availability" value="{{ value.access_days_time }}">
+        <input type="hidden" name="connectors" value="{{ value.ev_connector_types }}">
+        <button type="submit">Add to My Stations</button>
+    </form>
    </div>
 </div>
 {% endfor %} {% endif %}

@@ -62,7 +62,6 @@ def stations_index(request):
             response = requests.request(
                 "GET", url, headers=headers, params=querystring)
             data = response.json()
-            print(data)
         else:
             print("bad form")
             # return render(request, 'stations/index.html', {'form': form})
@@ -91,6 +90,9 @@ def add_station(request, station_id):
 def stations_detail(request, station_id):
     station = Station.objects.get(id=station_id)
     return render(request, 'stations/detail.html', {'station': station})
+
+def store_api_data():
+    pass
 
 # Classes Below
 

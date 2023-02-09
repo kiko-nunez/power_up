@@ -71,7 +71,7 @@ def stations_index(request):
             # return render(request, 'stations/index.html', {'form': form})
     else:
         form = SearchForm()
-    return render(request, 'stations/index.html', {'form': form, 'stations': stations, 'data': data})
+    return render(request, 'stations/index.html', {'form': form, 'stations': stations, 'data' : data})
 
 @login_required
 def stations(request):

@@ -8,9 +8,9 @@ class StationForm(ModelForm):
     fields = ['name', 'address', 'availability', 'connectors', 'reviews']
 
 class SearchForm(forms.Form):
-    search_value = forms.CharField(label='Post Code', max_length=100)
+    search_value = forms.CharField(label='Postcode', max_length=100)
 
-class VehicleForm(forms.Form):
+class VehicleForm(forms.ModelForm):
   class Meta: 
     model: Vehicle
     fields = '__all__'

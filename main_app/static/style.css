@@ -1,12 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Bungee);
+
 body {
-    background: linear-gradient(to right, #64d464, #018e5a);
+    background-color: rgb(247, 255, 250);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
+
+.home {
+    animation: backgroundAnimation 20s linear 0s infinite alternate;
+    background-size: cover;
+  }
+.hometxt {
+    text-align: center;
+    font-family: 'Bungee';
+    font-size: 80px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.search {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
+
+  @keyframes backgroundAnimation {
+    0% {
+      background-image: url('https://www.chargepoint.com/sites/default/files/blog-photos/2022-04/DC-fast-charging-site-design.png');
+    }
+    25% {
+      background-image: url('https://media.istockphoto.com/id/1323244949/photo/electric-cars-charging-at-a-charging-station-3d-rendering.jpg?b=1&s=170667a&w=0&k=20&c=tuG_8xDpPsvuxAxi_OvoI9Je7PDDvT1bCHypnQWTHpY=');
+    }
+    50% {
+      background-image: url('https://acd-inc.com/wp-content/uploads/2022/01/Background-Car-1024x576.jpg');
+    }
+    75% {
+      background-image: url('https://electrek.co/wp-content/uploads/sites/3/2022/08/Electric-vehicles-recession-1-1.jpeg?quality=82&strip=all');
+    }
+    100% {
+      background-image: url('https://www.chargepoint.com/sites/default/files/blog-photos/2022-04/DC-fast-charging-site-design.png');
+    }
+  }
+  
+
   nav {
-    background-color: lightgreen;
-    color: black;
+    background-color: rgb(0, 130, 69);
+    font-family: 'Bungee';
+    font-size: 45px;
   }
   
   main {
@@ -25,7 +69,7 @@ body {
     color: rgba(3, 102, 249, 0.947);
   }
   .page-footer {
-    background-color: lightgreen;
+    background-color: rgb(0, 130, 69);
   }
 
   .card {

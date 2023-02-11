@@ -102,37 +102,20 @@ def vehicle_index(request):
     vehicles = Vehicle.objects.all()
     return render(request, 'vehicle_index.html', {'vehicles': vehicles})
 @login_required
-def add_vehicle(request, vehicle_id):
-    form = VehicleForm(request.POST)
-    if form.is_valid():
-        new_vehicle = form.save(commit=False)
-        new_vehicle.vehicle_id = vehicle_id
-        new_vehicle.save()
-    return redirect('vehicle_index', vehicle_id=vehicle_id)
+def add_vehicle(request):
+    if request.method == 'POST':
+        form = VehicleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('vehicle_index')
+    else:
+        form = VehicleForm()
+    return render(request, 'vehicle_form.html', {'form': form})
+
 @login_required
 def vehicle_detail(request, vehicle_id):
     vehicle = Vehicle.objects.get(id=vehicle_id)
     return render(request, 'vehicle_detail.html', {'vehicle': vehicle})
-
-def add_photo(request, vehicle_id):
-    # photo-file will be the "name" attribute on the <input type="file">
-    photo_file = request.FILES.get('photo-file', None)
-    if photo_file:
-        s3 = boto3.client('s3')
-        # need a unique "key" for S3 / needs image file extension too
-        key = uuid.uuid4().hex[:6] + \
-            photo_file.name[photo_file.name.rfind('.'):]
-        # just in case something goes wrong
-        try:
-            s3.upload_fileobj(photo_file, BUCKET, key)
-            # build the full url string
-            url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            # we can assign to cat_id or cat (if you have a cat object)
-            photo = Photo(url=url, vehicle_id=vehicle_id)
-            photo.save()
-        except:
-            print('An error occurred uploading file to S3')
-    return redirect('detail', vehicle_id=vehicle_id)
 
 
 # Classes Below

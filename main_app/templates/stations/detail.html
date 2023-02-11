@@ -8,6 +8,8 @@
         <span class="card-title">{{ station.name }}</span>
         <p>Address: {{ station.address }}</p>
         <p>Connector Types: {{ station.connectors }}</p>
+        <p>Availability: {{ station.availablity }}</p>
+        <p>Review: {{station.reviews }} </p>
       </div>
       <div class="card-action">
         <a href="{% url 'stations_update' station.id %}">Edit</a>

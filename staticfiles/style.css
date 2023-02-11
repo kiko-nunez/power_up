@@ -1,0 +1,50 @@
+body {
+    background: black;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  nav {
+    background-color: lightgreen;
+    color: black;
+  }
+  
+  main {
+    flex: 1 0 auto;
+  }
+  
+  footer {
+    padding-top: 0;
+    text-align: right;
+    background-color: lightgreen;
+    color: lightgreen;
+  }
+
+
+  a {
+    color: rgba(3, 102, 249, 0.947);
+  }
+  .page-footer {
+    background-color: lightgreen;
+  }
+
+  .card {
+    box-shadow: inset 5px 5px 5px 0 purple, inset -5px -5px 5px limegreen;
+    transition: ease 200ms;
+    background: rgb(255, 255, 255, .5);
+    margin-bottom: 8px;
+    -moz-box-shadow: inset 5px 5px 5px 0 darkgreen, inset -5px -5px 5px darkgreen;
+    -webkit-box-shadow: inset 5px 5px 5px 0 darkgreen, inset -5px -5px 5px darkgreen;
+    box-shadow: inset 5px 5px 5px 0 black, inset -5px -5px 5px black;
+    color: black;
+} 
+ .card:hover {
+    background: rgba(17, 1, 1, 0.5);
+    /* transform: scale(1.1);
+    transition: ease 200ms; */
+    color: white;
+  }
+
+  label {
+    color: black;
+  }

@@ -23,8 +23,8 @@ class Vehicle(models.Model):
         ('HEV', 'Hybrid Electric Vehicle'),
         ('FCEV', 'Fuel Cell Electric Vehicle')
     )
+    type = models.CharField(max_length=4, choices=TYPES, default=TYPES[0][0], verbose_name="EV Type")
     make = models.CharField(max_length=25)
     model = models.CharField(max_length=25)
-    type = models.CharField(max_length=4, choices=TYPES, default=TYPES[0][0], verbose_name="EV Type")
-    batterysize = models.IntegerField()
+    batterysize = models.IntegerField(verbose_name="Battery Size")
 

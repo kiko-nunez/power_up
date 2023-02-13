@@ -3,7 +3,9 @@
 
 
 body {
-    background-color: rgb(247, 255, 250);
+  background: radial-gradient(lightgreen, green);
+
+  
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -107,4 +109,19 @@ select {
 
   label {
     color: black;
+  }
+
+  .aboutpage {
+    align-content: center;
+    text-align: center;
+  }
+
+  img {
+    width: 600px;
+    height: 400px;
+  }
+
+  .goal {
+    font-weight: bolder;
+    font-size: large;
   }

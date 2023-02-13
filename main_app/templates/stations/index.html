@@ -51,7 +51,7 @@
     <form action="{% url 'stations_create' %} " method="post">
         {% csrf_token %}
     <span class="card-title">{{ value.station_name }}</span>
-        <p>Address: {{ value.street_address }}</p>
+        <p>Address: {{ value.street_address }}, {{value.city}}, {{value.state}}</p>
         <p>Availability: {{ value.access_days_time }}</p>
         <p>Connector Types: {{ value.ev_connector_types }}</p>
         <p>Reviews: {{station.reviews }}</p>

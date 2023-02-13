@@ -16,4 +16,6 @@
 * GitHub
 
 # Screenshots
+![Home Page](home.png)
+![Station Results](stations.png)
 

@@ -66,6 +66,7 @@ def stations_index(request):
             response = requests.request(
                 "GET", url, headers=headers, params=querystring)
             data = response.json()
+            print(data)
         else:
             print("bad form")
             # return render(request, 'stations/index.html', {'form': form})

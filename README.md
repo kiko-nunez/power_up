@@ -16,6 +16,6 @@
 * GitHub
 
 # Screenshots
-![Home Page](screenshots/home.png)
-![Station Results](screenshots/stations.png)
+![Home Page](main_app/screenshots/home.png)
+![Station Results](main_app/screenshots/stations.png)
 

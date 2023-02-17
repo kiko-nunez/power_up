@@ -28,3 +28,6 @@ class Vehicle(models.Model):
     model = models.CharField(max_length=25)
     batterysize = models.IntegerField(verbose_name="Battery Size")
 
+    def __str__(self):
+        return f'{self.make} {self.model}'
+

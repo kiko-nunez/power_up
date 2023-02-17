@@ -4,7 +4,7 @@
 [Deployed App](https://powerup.herokuapp.com/) 
 
 # Technologies Used: 
-[![Technologies Used:](https://skillicons.dev/icons?i=js,html,css,python,django,heroku,postgres&theme=dark)](https://skillicons.dev)
+[![Technologies Used:](https://skillicons.dev/icons?i=js,html,css,python,django,heroku,postgres,jenkins,docker&theme=dark)](https://skillicons.dev)
 * HTML
 * CSS
 * JavaScript
@@ -16,6 +16,8 @@
 * Trello
 * ERD
 * GitHub
+* Docker
+* Unit Testing
 
 # Screenshots
 ### Home Page

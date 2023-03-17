@@ -7,8 +7,7 @@ from .models import Station, Vehicle
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
 from .forms import StationForm, SearchForm, VehicleForm
-import uuid
-import boto3
+
 
 url = "https://electric-vehicle-charging-station-and-point.p.rapidapi.com/us/elec.json"
 
